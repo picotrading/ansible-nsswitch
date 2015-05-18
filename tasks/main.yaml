@@ -1,0 +1,8 @@
+---
+
+- name: Cteate nsswitch.conf file
+  template:
+    src: nsswitch.conf.j2
+    dest: "{{ nsswitch_file_location }}"
+  tags:
+    - nsswitch_config

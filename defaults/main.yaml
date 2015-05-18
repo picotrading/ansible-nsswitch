@@ -1,0 +1,95 @@
+---
+
+# Default location of the config file
+nsswitch_file_location: /etc/nsswitch.conf
+
+# Aliases
+nsswitch_aliases:
+  - files
+  - nisplus
+
+# Automount
+nsswitch_automount:
+  - files
+  - nisplus
+
+# Bootparams
+nsswitch_bootparams:
+  - nisplus
+  - '[NOTFOUND=return]'
+  - files
+
+# Ethers
+nsswitch_ethers:
+  - files
+
+# Group
+nsswitch_group:
+  - files
+
+# Hosts
+nsswitch_hosts:
+  - files
+  - dns
+
+# Init groups
+nsswitch_initgroups:
+  - files
+
+# Net groups
+nsswitch_netgroup:
+  - nisplus
+
+# Netmasks
+nsswitch_netmasks:
+  - files
+
+# Networks
+nsswitch_networks:
+  - files
+
+# Passwd
+nsswitch_passwd:
+  - files
+
+# Protocols
+nsswitch_protocols:
+  - files
+
+# Publickey
+nsswitch_publickey:
+  - nisplus
+
+# RPC
+nsswitch_rpc:
+  - files
+
+# Services
+nsswitch_services:
+  - files
+
+# Shadow
+nsswitch_shadow:
+  - files
+
+# List of all databases
+nsswitch__all:
+  aliases: "{{ nsswitch_aliases }}"
+  automount: "{{ nsswitch_automount }}"
+  bootparams: "{{ nsswitch_bootparams }}"
+  ethers: "{{ nsswitch_ethers }}"
+  group: "{{ nsswitch_group }}"
+  hosts: "{{ nsswitch_hosts }}"
+  initgroups: "{{ nsswitch_initgroups }}"
+  netgroup: "{{ nsswitch_netgroup }}"
+  netmasks: "{{ nsswitch_netmasks }}"
+  networks: "{{ nsswitch_networks }}"
+  passwd: "{{ nsswitch_passwd }}"
+  protocols: "{{ nsswitch_protocols }}"
+  publickey: "{{ nsswitch_publickey }}"
+  rpc: "{{ nsswitch_rpc }}"
+  services: "{{ nsswitch_services }}"
+  shadow: "{{ nsswitch_shadow }}"
+
+# Final configuration
+nsswitch_config: "{{ nsswitch__all }}"
